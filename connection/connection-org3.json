@@ -1,0 +1,60 @@
+{
+    "name": "first-network-interliner",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Interliner",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "Interliner": {
+            "mspid": "InterlinerMSP",
+            "peers": [
+                "peer0.interliner.example.com",
+                "peer1.interliner.example.com"
+            ],
+            "certificateAuthorities": [
+                "ca.interliner.example.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.interliner.example.com": {
+            "url": "grpcs://localhost:11051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICcjCCAhegAwIBAgIQQ6/BIaYvgPypUWXIOm+3MDAKBggqhkjOPQQDAjCBgjEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xHzAdBgNVBAoTFmludGVybGluZXIuZXhhbXBsZS5jb20xJTAjBgNV\nBAMTHHRsc2NhLmludGVybGluZXIuZXhhbXBsZS5jb20wHhcNMjExMDI3MTgyOTAw\nWhcNMzExMDI1MTgyOTAwWjCBgjELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlm\nb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xHzAdBgNVBAoTFmludGVybGlu\nZXIuZXhhbXBsZS5jb20xJTAjBgNVBAMTHHRsc2NhLmludGVybGluZXIuZXhhbXBs\nZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARCS/47CxlcR+EHUQ28fwMe\nPCn01yfSFZHahEqu/gUeF1mJw+vFkeVfrnkVek2/kyxEpHGf4ImIsp8i8ENBmDG9\no20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUF\nBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIEEk7GPIUVIR0x7eGYginPhf\nfnVLR0xZ4Bl2oNn1u0HTMAoGCCqGSM49BAMCA0kAMEYCIQCAPZ94BNh9geXVo3TU\nsO4FI46PY63jXQF/4BtGarTDkwIhAOViWi+0qYLkulRDKH4Z6lV/QorpUZcSfk0G\nsF6gXmdE\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.interliner.example.com",
+                "hostnameOverride": "peer0.interliner.example.com"
+            }
+        },
+        "peer1.interliner.example.com": {
+            "url": "grpcs://localhost:12051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICcjCCAhegAwIBAgIQQ6/BIaYvgPypUWXIOm+3MDAKBggqhkjOPQQDAjCBgjEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xHzAdBgNVBAoTFmludGVybGluZXIuZXhhbXBsZS5jb20xJTAjBgNV\nBAMTHHRsc2NhLmludGVybGluZXIuZXhhbXBsZS5jb20wHhcNMjExMDI3MTgyOTAw\nWhcNMzExMDI1MTgyOTAwWjCBgjELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlm\nb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xHzAdBgNVBAoTFmludGVybGlu\nZXIuZXhhbXBsZS5jb20xJTAjBgNVBAMTHHRsc2NhLmludGVybGluZXIuZXhhbXBs\nZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARCS/47CxlcR+EHUQ28fwMe\nPCn01yfSFZHahEqu/gUeF1mJw+vFkeVfrnkVek2/kyxEpHGf4ImIsp8i8ENBmDG9\no20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUF\nBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIEEk7GPIUVIR0x7eGYginPhf\nfnVLR0xZ4Bl2oNn1u0HTMAoGCCqGSM49BAMCA0kAMEYCIQCAPZ94BNh9geXVo3TU\nsO4FI46PY63jXQF/4BtGarTDkwIhAOViWi+0qYLkulRDKH4Z6lV/QorpUZcSfk0G\nsF6gXmdE\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.interliner.example.com",
+                "hostnameOverride": "peer1.interliner.example.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.interliner.example.com": {
+            "url": "https://localhost:9054",
+            "caName": "ca.interliner.example.com",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICajCCAhCgAwIBAgIRANCyRaz8qsashyd5FJ1s1ZYwCgYIKoZIzj0EAwIwfzEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xHzAdBgNVBAoTFmludGVybGluZXIuZXhhbXBsZS5jb20xIjAgBgNV\nBAMTGWNhLmludGVybGluZXIuZXhhbXBsZS5jb20wHhcNMjExMDI3MTgyOTAwWhcN\nMzExMDI1MTgyOTAwWjB/MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5p\nYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEfMB0GA1UEChMWaW50ZXJsaW5lci5l\neGFtcGxlLmNvbTEiMCAGA1UEAxMZY2EuaW50ZXJsaW5lci5leGFtcGxlLmNvbTBZ\nMBMGByqGSM49AgEGCCqGSM49AwEHA0IABMkCnFW6Ff0nOlortC9BX0FUaT/J8Dzi\n9o9ZC1L6lvOQd0M26ilgNTUfRYSse+Da25k5+0+D4caMixbV22Duh6ijbTBrMA4G\nA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYD\nVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgZ3TzCGMcMf5rEs+frFCWev6fbzTPUZhr\nYoE7+aQ8xuwwCgYIKoZIzj0EAwIDSAAwRQIhAMhg463D5QC4wkYC1jitW/lJ+fND\nt9YlVdnfGxK1J84WAiB9FqM4byhfCl3R47/+4PZ0qMysoI8dOV7dyOVVMh//Cg==\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}

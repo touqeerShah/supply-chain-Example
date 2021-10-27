@@ -1,0 +1,60 @@
+{
+    "name": "first-network-airport",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Airport",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "Airport": {
+            "mspid": "AirportMSP",
+            "peers": [
+                "peer0.airport.example.com",
+                "peer1.airport.example.com"
+            ],
+            "certificateAuthorities": [
+                "ca.airport.example.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.airport.example.com": {
+            "url": "grpcs://localhost:9051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICYzCCAgqgAwIBAgIRAPlEdLi3jvAjDa9bu1vzjjYwCgYIKoZIzj0EAwIwfDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xHDAaBgNVBAoTE2FpcnBvcnQuZXhhbXBsZS5jb20xIjAgBgNVBAMT\nGXRsc2NhLmFpcnBvcnQuZXhhbXBsZS5jb20wHhcNMjExMDI3MTgyOTAwWhcNMzEx\nMDI1MTgyOTAwWjB8MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEW\nMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEcMBoGA1UEChMTYWlycG9ydC5leGFtcGxl\nLmNvbTEiMCAGA1UEAxMZdGxzY2EuYWlycG9ydC5leGFtcGxlLmNvbTBZMBMGByqG\nSM49AgEGCCqGSM49AwEHA0IABBlNu69w2jXMe7TRJmf9BWLuqd1/rob1yCfqMVHh\nbLt0THmLRULbSSUHg9F0rt7n3if+tgUV7OhOf/3ovUnZISqjbTBrMA4GA1UdDwEB\n/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/\nBAUwAwEB/zApBgNVHQ4EIgQgsXsIo0vLZdxn0+sVwfW3zbNt0In07qPfD5ptFoLJ\nY9gwCgYIKoZIzj0EAwIDRwAwRAIgVO5nCooKm1e4Kr9b8NiBROPtaiPG7icuoUTe\nqc3PA2ECIBC3bsd336U4YA3V+t46PO9iUMyQPVHH4QqCIM+qPcMj\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.airport.example.com",
+                "hostnameOverride": "peer0.airport.example.com"
+            }
+        },
+        "peer1.airport.example.com": {
+            "url": "grpcs://localhost:10051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICYzCCAgqgAwIBAgIRAPlEdLi3jvAjDa9bu1vzjjYwCgYIKoZIzj0EAwIwfDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xHDAaBgNVBAoTE2FpcnBvcnQuZXhhbXBsZS5jb20xIjAgBgNVBAMT\nGXRsc2NhLmFpcnBvcnQuZXhhbXBsZS5jb20wHhcNMjExMDI3MTgyOTAwWhcNMzEx\nMDI1MTgyOTAwWjB8MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEW\nMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEcMBoGA1UEChMTYWlycG9ydC5leGFtcGxl\nLmNvbTEiMCAGA1UEAxMZdGxzY2EuYWlycG9ydC5leGFtcGxlLmNvbTBZMBMGByqG\nSM49AgEGCCqGSM49AwEHA0IABBlNu69w2jXMe7TRJmf9BWLuqd1/rob1yCfqMVHh\nbLt0THmLRULbSSUHg9F0rt7n3if+tgUV7OhOf/3ovUnZISqjbTBrMA4GA1UdDwEB\n/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/\nBAUwAwEB/zApBgNVHQ4EIgQgsXsIo0vLZdxn0+sVwfW3zbNt0In07qPfD5ptFoLJ\nY9gwCgYIKoZIzj0EAwIDRwAwRAIgVO5nCooKm1e4Kr9b8NiBROPtaiPG7icuoUTe\nqc3PA2ECIBC3bsd336U4YA3V+t46PO9iUMyQPVHH4QqCIM+qPcMj\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.airport.example.com",
+                "hostnameOverride": "peer1.airport.example.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.airport.example.com": {
+            "url": "https://localhost:8054",
+            "caName": "ca.airport.example.com",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICXjCCAgSgAwIBAgIRALtGxD4yPl3j2swirdzM20swCgYIKoZIzj0EAwIweTEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xHDAaBgNVBAoTE2FpcnBvcnQuZXhhbXBsZS5jb20xHzAdBgNVBAMT\nFmNhLmFpcnBvcnQuZXhhbXBsZS5jb20wHhcNMjExMDI3MTgyOTAwWhcNMzExMDI1\nMTgyOTAwWjB5MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQG\nA1UEBxMNU2FuIEZyYW5jaXNjbzEcMBoGA1UEChMTYWlycG9ydC5leGFtcGxlLmNv\nbTEfMB0GA1UEAxMWY2EuYWlycG9ydC5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEG\nCCqGSM49AwEHA0IABDV0CxpqDZ7zARnFbuhoFoApj/oLAVdZVnnpgz+HEwcqRCT8\ny3XQx+35KHrGkiHnCwKiYwkp9fjBS7HHLSTBb0WjbTBrMA4GA1UdDwEB/wQEAwIB\npjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB\n/zApBgNVHQ4EIgQgR4Hmu2wsDVvwYNJZ3M40ogaWxU6+Jlf8H1bNYI8CsdMwCgYI\nKoZIzj0EAwIDSAAwRQIhAMnSw8AzHMSYLw6DNxWCFCLe7cVljegMHuDwQbEjcGbQ\nAiAzIOpdss36cLHBHJdsGPMZZ6lQiPL78PFAUXdfKaxjuA==\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}

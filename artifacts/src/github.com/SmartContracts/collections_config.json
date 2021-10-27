@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Baggage",
+        "policy": "OR('InterlinerMSP.member','AirportMSP.member','AirlineMSP.member')",
+        "requiredPeerCount": 0,
+        "maxPeerCount": 2,
+        "blockToLive": 0,
+        "memberOnlyRead": true
+    },
+    {
+        "name": "Airport",
+        "policy": "OR('InterlinerMSP.member','AirportMSP.member','AirlineMSP.member')",
+        "requiredPeerCount": 0,
+        "maxPeerCount": 2,
+        "blockToLive": 0,
+        "memberOnlyRead": true
+    },
+    {
+        "name": "Airlines",
+        "policy": "OR('InterlinerMSP.member','AirportMSP.member','AirlineMSP.member')",
+        "requiredPeerCount": 0,
+        "maxPeerCount": 2,
+        "blockToLive": 0,
+        "memberOnlyRead": true
+    }		
+]

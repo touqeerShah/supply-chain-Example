@@ -1,0 +1,60 @@
+{
+    "name": "first-network-interliner",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Interliner",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "Interliner": {
+            "mspid": "InterlinerMSP",
+            "peers": [
+                "peer0.interliner.example.com",
+                "peer1.interliner.example.com"
+            ],
+            "certificateAuthorities": [
+                "ca.interliner.example.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.interliner.example.com": {
+            "url": "grpcs://localhost:${P0PORT}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.interliner.example.com",
+                "hostnameOverride": "peer0.interliner.example.com"
+            }
+        },
+        "peer1.interliner.example.com": {
+            "url": "grpcs://localhost:${P1PORT}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.interliner.example.com",
+                "hostnameOverride": "peer1.interliner.example.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.interliner.example.com": {
+            "url": "https://localhost:${CAPORT}",
+            "caName": "ca.interliner.example.com",
+            "tlsCACerts": {
+                "pem": "${CAPEM}"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}

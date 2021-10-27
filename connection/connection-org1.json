@@ -1,0 +1,60 @@
+{
+    "name": "first-network-airline",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Airline",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "Airline": {
+            "mspid": "AirlineMSP",
+            "peers": [
+                "peer0.airline.example.com",
+                "peer1.airline.example.com"
+            ],
+            "certificateAuthorities": [
+                "ca.airline.example.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.airline.example.com": {
+            "url": "grpcs://localhost:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICYjCCAgmgAwIBAgIQNVzmMmNneKzl7IjuMSIAyTAKBggqhkjOPQQDAjB8MQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEcMBoGA1UEChMTYWlybGluZS5leGFtcGxlLmNvbTEiMCAGA1UEAxMZ\ndGxzY2EuYWlybGluZS5leGFtcGxlLmNvbTAeFw0yMTEwMjcxODI5MDBaFw0zMTEw\nMjUxODI5MDBaMHwxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYw\nFAYDVQQHEw1TYW4gRnJhbmNpc2NvMRwwGgYDVQQKExNhaXJsaW5lLmV4YW1wbGUu\nY29tMSIwIAYDVQQDExl0bHNjYS5haXJsaW5lLmV4YW1wbGUuY29tMFkwEwYHKoZI\nzj0CAQYIKoZIzj0DAQcDQgAEtErXRpleTxrbKQMWblnONV5/U9fE+T4DjUqxmLXy\nXBxeAyE5yL7zlOjcYprDvYsaZ1hOyczJpre3fi6aCYdVz6NtMGswDgYDVR0PAQH/\nBAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8E\nBTADAQH/MCkGA1UdDgQiBCD9bYdS0ruj7Mtha/Z/ArkfiVFfP+V0uXRMsmYchywg\ndjAKBggqhkjOPQQDAgNHADBEAiBKa87dncCQubg4I9Nwom2exX3zolAhc/nP8z3t\nn7JKSQIgdJ9FQLX5/S1jh2FyP6n+wz1CPRolQgWo0+BuW7O72Ds=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.airline.example.com",
+                "hostnameOverride": "peer0.airline.example.com"
+            }
+        },
+        "peer1.airline.example.com": {
+            "url": "grpcs://localhost:8051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICYjCCAgmgAwIBAgIQNVzmMmNneKzl7IjuMSIAyTAKBggqhkjOPQQDAjB8MQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEcMBoGA1UEChMTYWlybGluZS5leGFtcGxlLmNvbTEiMCAGA1UEAxMZ\ndGxzY2EuYWlybGluZS5leGFtcGxlLmNvbTAeFw0yMTEwMjcxODI5MDBaFw0zMTEw\nMjUxODI5MDBaMHwxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYw\nFAYDVQQHEw1TYW4gRnJhbmNpc2NvMRwwGgYDVQQKExNhaXJsaW5lLmV4YW1wbGUu\nY29tMSIwIAYDVQQDExl0bHNjYS5haXJsaW5lLmV4YW1wbGUuY29tMFkwEwYHKoZI\nzj0CAQYIKoZIzj0DAQcDQgAEtErXRpleTxrbKQMWblnONV5/U9fE+T4DjUqxmLXy\nXBxeAyE5yL7zlOjcYprDvYsaZ1hOyczJpre3fi6aCYdVz6NtMGswDgYDVR0PAQH/\nBAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8E\nBTADAQH/MCkGA1UdDgQiBCD9bYdS0ruj7Mtha/Z/ArkfiVFfP+V0uXRMsmYchywg\ndjAKBggqhkjOPQQDAgNHADBEAiBKa87dncCQubg4I9Nwom2exX3zolAhc/nP8z3t\nn7JKSQIgdJ9FQLX5/S1jh2FyP6n+wz1CPRolQgWo0+BuW7O72Ds=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.airline.example.com",
+                "hostnameOverride": "peer1.airline.example.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.airline.example.com": {
+            "url": "https://localhost:7054",
+            "caName": "ca.airline.example.com",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICXTCCAgOgAwIBAgIQGfVyHCkGiBxpumbR8w7kTDAKBggqhkjOPQQDAjB5MQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEcMBoGA1UEChMTYWlybGluZS5leGFtcGxlLmNvbTEfMB0GA1UEAxMW\nY2EuYWlybGluZS5leGFtcGxlLmNvbTAeFw0yMTEwMjcxODI5MDBaFw0zMTEwMjUx\nODI5MDBaMHkxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYD\nVQQHEw1TYW4gRnJhbmNpc2NvMRwwGgYDVQQKExNhaXJsaW5lLmV4YW1wbGUuY29t\nMR8wHQYDVQQDExZjYS5haXJsaW5lLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0CAQYI\nKoZIzj0DAQcDQgAEJv7tXTZag0qrG69QOZ2w6Me+Bmebf+R2WhTYBytdd2diHQl2\nJUrdGjbsqqGAZld3oRyhquCY/nqZ9hdWAueE3KNtMGswDgYDVR0PAQH/BAQDAgGm\nMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/\nMCkGA1UdDgQiBCC3+fRQ7unjNlupizJ5YK/nNVAioQOcYQ8e2D1I+9hDYDAKBggq\nhkjOPQQDAgNIADBFAiBWLS0GtuKaPr2EiF/Kw7GIyKjzS2pbMwvluVrQ/E4DXwIh\nALnGD0QtxkNs8viPpep35xDMI11FVnj3fIqwW8GtUgIS\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}

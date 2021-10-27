@@ -1,0 +1,60 @@
+{
+    "name": "first-network-airline",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Airline",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "Airline": {
+            "mspid": "AirlineMSP",
+            "peers": [
+                "peer0.airline.example.com",
+                "peer1.airline.example.com"
+            ],
+            "certificateAuthorities": [
+                "ca.airline.example.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.airline.example.com": {
+            "url": "grpcs://localhost:${P0PORT}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.airline.example.com",
+                "hostnameOverride": "peer0.airline.example.com"
+            }
+        },
+        "peer1.airline.example.com": {
+            "url": "grpcs://localhost:${P1PORT}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.airline.example.com",
+                "hostnameOverride": "peer1.airline.example.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.airline.example.com": {
+            "url": "https://localhost:${CAPORT}",
+            "caName": "ca.airline.example.com",
+            "tlsCACerts": {
+                "pem": "${CAPEM}"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}
