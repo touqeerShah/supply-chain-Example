@@ -242,8 +242,8 @@ func (t *PRChainCode) CreateBaggage(stub hypConnect, args []string) pb.Response 
 
 		// airlineId         := sanitize(args[0], "string").(string)
 		// airlinesFee         := sanitize(args[2], "float").(float64)
-		userId, useriderr := cid.GetMSPID(stub.Connection)
-		if useriderr != nil {
+		userId, _, useriderr := cid.GetAttributeValue(stub.Connection, "UserId")
+		if Roleerr != nil {
 			return shim.Error("User Id Not Found!!! " + useriderr.Error())
 		}
 		baggageId := sanitize(args[0], "string").(string)
@@ -336,9 +336,9 @@ func (t *PRChainCode) ChangeBaggageStatusByAirlines(stub hypConnect, args []stri
 		status := sanitize(args[1], "bool").(bool)
 		fees := sanitize(args[2], "float").(float64)
 
-		airportId, airportIderr := cid.GetMSPID(stub.Connection)
-		if airportIderr != nil {
-			return shim.Error("User Id Not Found!!! " + airportIderr.Error())
+		airlineId, _, airlineIderr := cid.GetAttributeValue(stub.Connection, "UserId")
+		if airlineIderr != nil {
+			return shim.Error("User Id Not Found!!! " + airlineIderr.Error())
 		}
 		var baggageRoute BaggageRoute
 
@@ -352,7 +352,8 @@ func (t *PRChainCode) ChangeBaggageStatusByAirlines(stub hypConnect, args []stri
 		}
 		isExist :=false
 		for i:=0 ; i< len(baggageRoute.Path);i++{
-			if baggageRoute.Path[i].AirlineId==airportId{
+			fmt.Println(strings.ToLower(baggageRoute.Path[i].AirlineId), strings.ToLower(airlineId))
+			if strings.Compare(strings.ToLower(baggageRoute.Path[i].AirlineId),strings.ToLower(airlineId))==0{
 				if i==0{
 					baggageRoute.Path[i].AirlineStatus=status
 					baggageRoute.AirlineFees=append(baggageRoute.AirlineFees,fees)
@@ -373,7 +374,7 @@ func (t *PRChainCode) ChangeBaggageStatusByAirlines(stub hypConnect, args []stri
 				}
 			}
 		}
-		if isExist{
+		if !isExist{
 			return shim.Error("Invalid Airlines Id not exit in Path")
 		}
 
@@ -420,7 +421,8 @@ func (t *PRChainCode) ChangeBaggageStatusByAirport(stub hypConnect, args []strin
 		status := sanitize(args[1], "bool").(bool)
 		fees := sanitize(args[2], "float").(float64)
 
-		airportId, airportIderr := cid.GetMSPID(stub.Connection)
+
+		airportId, _, airportIderr := cid.GetAttributeValue(stub.Connection, "UserId")
 		if airportIderr != nil {
 			return shim.Error("User Id Not Found!!! " + airportIderr.Error())
 		}
@@ -436,7 +438,10 @@ func (t *PRChainCode) ChangeBaggageStatusByAirport(stub hypConnect, args []strin
 		}
 		isExist :=false
 		for i:=0 ; i< len(baggageRoute.Path);i++{
-			if baggageRoute.Path[i].AirportId==airportId{
+			fmt.Println()
+			fmt.Println(strings.ToLower(baggageRoute.Path[i].AirportId), strings.ToLower(airportId),strings.Compare(strings.ToLower(baggageRoute.Path[i].AirportId),strings.ToLower(airportId)))
+
+			if strings.Compare(strings.ToLower(baggageRoute.Path[i].AirportId),strings.ToLower(airportId))==0{
 				if i==0{
 					baggageRoute.Path[i].AirportStatus=status
 					baggageRoute.AirportFees=append(baggageRoute.AirportFees,fees)
@@ -457,7 +462,7 @@ func (t *PRChainCode) ChangeBaggageStatusByAirport(stub hypConnect, args []strin
 				}
 			}
 		}
-		if isExist{
+		if !isExist{
 			return shim.Error("Invalid Airport Id not exit in Path")
 		}
 

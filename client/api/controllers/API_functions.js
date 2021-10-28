@@ -85,7 +85,7 @@ module.exports.invoke = function (userid,channel_name, chaincode_name, orgConect
   main();
 }
 
-module.exports.query = function (channel_name, chaincode_name, orgConection, function_name, next_function, ...function_arguments) {
+module.exports.query = function (userid,channel_name, chaincode_name, orgConection, function_name, next_function, ...function_arguments) {
   return_args = {};
   /*
    * SPDX-License-Identifier: Apache-2.0
@@ -104,9 +104,9 @@ module.exports.query = function (channel_name, chaincode_name, orgConection, fun
       console.log(`Wallet path: ${walletPath}`);
 
       // Check to see if we've already enrolled the user.
-      const identity = await wallet.get("system");
+      const identity = await wallet.get(userid);
       if (!identity) {
-        console.log('An identity for the user "system" does not exist in the wallet');
+        console.log('An identity for the user userid does not exist in the wallet');
         console.log('Run the registerUser.js application before retrying');
         return;
       }
@@ -115,7 +115,7 @@ module.exports.query = function (channel_name, chaincode_name, orgConection, fun
       const gateway = new Gateway();
       await gateway.connect(ccp, {
         wallet,
-        identity: "system",
+        identity: userid,
         discovery: {
           enabled: true,
           asLocalhost: true
@@ -193,6 +193,9 @@ module.exports.register = function (admin, role, userid, caName, orgConection,af
       const userIdentity = await wallet.get(userid);
       if (userIdentity) {
         console.log('An identity for the user "system" already exists in the wallet');
+        return_args.status = 403;
+        return_args.message = 'An identity for the user "system" already exists in the wallet';
+        next_function(return_args);
         return;
       }
 
@@ -217,6 +220,10 @@ module.exports.register = function (admin, role, userid, caName, orgConection,af
         enrollmentID: userid,
         role: 'client',
         attrs: [{
+          name: 'UserId',
+          value: userid,
+          ecert: true
+        },{
           name: 'Role',
           value: role,
           ecert: true

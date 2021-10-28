@@ -12,7 +12,7 @@ presetup
 
 CHANNEL_NAME="interlinerchannel"
 CC_RUNTIME_LANGUAGE="golang"
-VERSION="1"
+VERSION="5"
 CC_SRC_PATH="./artifacts/src/github.com/${fileName}/"
 CC_NAME=$fileName
 

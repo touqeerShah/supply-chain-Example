@@ -1,2 +1,6 @@
 Installed chaincodes on peer:
-Package ID: SmartContracts_1:363124d3c4668b28afb5fc9176f59b8be2f5b9ba2802e0beaf52d8d4b5855f8c, Label: SmartContracts_1
+Package ID: SmartContracts_1:76a75a4f8d3aedf10e515d3ef9a2d7d5b32aa165bbf8880f447f629ca849a77b, Label: SmartContracts_1
+Package ID: SmartContracts_2:6604a5428f4b3cb6734df39963decdc8b03d0372e0811678e4737befd92d9b56, Label: SmartContracts_2
+Package ID: SmartContracts_3:991575c50c9561012c4a7eb6e8249e8191f5d6e5ae6a13feb35cef40dbd81f0c, Label: SmartContracts_3
+Package ID: SmartContracts_4:7e67e5a7f3fd40c1d61bd7853d7c6cc2317171756ff2f8a96db4ebd7bc7a9557, Label: SmartContracts_4
+Package ID: SmartContracts_5:aec9c6e5717c247c74553e7f08701081809446dfe3915a3a69391cb5624adae8, Label: SmartContracts_5

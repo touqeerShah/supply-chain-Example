@@ -52,7 +52,12 @@ async function main() {
             affiliation: 'interliner.department1',
             enrollmentID: 'interliner',
             role: 'client',
-            attrs: [{
+            attrs: [
+                {
+                    name: 'UserId',
+                    value: 'interliner',
+                    ecert: true
+                },{
                 name: 'Role',
                 value: 'Interlining Agent',
                 ecert: true
