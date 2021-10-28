@@ -1,8 +1,3 @@
-###Sequence Diagram
-                    
-```seq
-Andrew->China: Says Hello 
-Note right of China: China thinks\nabout it 
-China-->Andrew: How are you? 
-Andrew->>China: I am good thanks!
-```
+<p>
+    <img src="./client/pic/p1.png" width="220" height="240" />
+</p>
