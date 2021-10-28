@@ -219,3 +219,8 @@ NodeJS(Server)->> Client : Server response back to clinet
     <img src="./client/pic/p4.png" width="100%" height="auto" />
 </p>
 
+
+
+
+> postman collection is outside the folder name as **assignment-postman.json**
+

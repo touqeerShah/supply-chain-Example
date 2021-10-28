@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "a86e0088-e92c-4417-ae18-78c144dd5aec",
+		"name": "CAD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterAirports",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "airportId",
+							"value": "airport1",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "sukkur",
+							"type": "text"
+						},
+						{
+							"key": "AllocatedVolume",
+							"value": "8",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "OperatorName",
+							"value": "tester",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Cubix",
+							"value": "51",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Royalties",
+							"value": "[{\"Id\":\"11\",\"Name\":\"ali\",\"Share\":2,\"AccountDetails\":\"1233\"},{\"Id\":\"2\",\"Name\":\"ali\",\"Share\":2,\"AccountDetails\":\"1233aa\"}]",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "SiteName",
+							"value": "south",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/RegisterAirports",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"RegisterAirports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterAirlines",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "airlineId",
+							"value": "PIA",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "sukkur",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "AllocatedVolume",
+							"value": "8",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "OperatorName",
+							"value": "tester",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Cubix",
+							"value": "51",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Royalties",
+							"value": "[{\"Id\":\"11\",\"Name\":\"ali\",\"Share\":2,\"AccountDetails\":\"1233\"},{\"Id\":\"2\",\"Name\":\"ali\",\"Share\":2,\"AccountDetails\":\"1233aa\"}]",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "SiteName",
+							"value": "south",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/RegisterAirlines",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"RegisterAirlines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateBaggage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "baggageId",
+							"value": "baggage2",
+							"type": "text"
+						},
+						{
+							"key": "source",
+							"value": "sukkur",
+							"type": "text"
+						},
+						{
+							"key": "destination",
+							"value": "karachi",
+							"type": "text"
+						},
+						{
+							"key": "OperatorName",
+							"value": "tester",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Cubix",
+							"value": "51",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "path",
+							"value": "[{\"AirportId\":\"airport1\",\"AirportStatus\":false,\"AirlineId\":\"PIA\",\"AirlineStatus\":false}]",
+							"type": "text"
+						},
+						{
+							"key": "SiteName",
+							"value": "south",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/CreateBaggage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"CreateBaggage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeBaggageStatusByAirport",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "baggageId",
+							"value": "baggage2",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "fees",
+							"value": "255",
+							"type": "text"
+						},
+						{
+							"key": "airportId",
+							"value": "airport1",
+							"type": "text"
+						},
+						{
+							"key": "Cubix",
+							"value": "51",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "path",
+							"value": "[{\"AirportId\":\"airport1\",\"AirportStatus\":false,\"AirlineId\":\"PIA\",\"AirlineStatus\":false}]",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "SiteName",
+							"value": "south",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/ChangeBaggageStatusByAirport",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"ChangeBaggageStatusByAirport"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeBaggageStatusByAirlines",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "baggageId",
+							"value": "baggage2",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "fees",
+							"value": "255",
+							"type": "text"
+						},
+						{
+							"key": "airportId",
+							"value": "PIA",
+							"type": "text"
+						},
+						{
+							"key": "Cubix",
+							"value": "51",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "path",
+							"value": "[{\"AirportId\":\"airport1\",\"AirportStatus\":false,\"AirlineId\":\"PIA\",\"AirlineStatus\":false}]",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "SiteName",
+							"value": "south",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/ChangeBaggageStatusByAirlines",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"ChangeBaggageStatusByAirlines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBaggageDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "baggageId",
+							"value": "baggage2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/GetBaggageDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"GetBaggageDetails"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
